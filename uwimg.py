@@ -53,6 +53,13 @@ load_image_lib = lib.load_image
 load_image_lib.argtypes = [c_char_p]
 load_image_lib.restype = IMAGE
 
+# Glitches
+
+gl_rgb_scale = lib.gl_rgb_scale
+gl_rgb_scale.argtypes = [IMAGE, c_float, c_float, c_float]
+gl_rgb_scale.restype = IMAGE
+
+
 def load_image(f):
     return load_image_lib(f.encode('ascii'))
 
